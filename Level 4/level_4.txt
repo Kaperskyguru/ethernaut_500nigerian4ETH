@@ -9,7 +9,7 @@
      * the attacker address, while msg.sender would be the address of the "proxy" contract.
      */
 
-     pragma solidity ^0.4.18;
+pragma solidity ^0.4.18;
 
 contract Telephone {
 

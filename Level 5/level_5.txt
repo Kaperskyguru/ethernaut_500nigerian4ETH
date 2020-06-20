@@ -1,0 +1,7 @@
+Level 5 is to hack the contract and gain larger 20 tokens:
+
+Follow this steps:
+
+1. Calling await contract.transfer(instance, 21, {from: player})
+
+The issue is because the tokens are not properly validated
