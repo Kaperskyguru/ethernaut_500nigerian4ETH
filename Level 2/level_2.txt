@@ -1,0 +1,5 @@
+Level 2 is to claim ownership of the contract
+
+Follow this steps:
+
+1. Calling await contract.Fallout();

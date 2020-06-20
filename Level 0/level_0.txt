@@ -1,0 +1,11 @@
+Level 0 is won by:
+
+1. Calling await contract.info();
+2. Calling await contract.info1();
+3. Calling await contract.info2('hello');
+4. Calling await contract.infoNum();
+5. Calling await contract.info42();
+6. Calling await contract.theMethodName();
+7. Calling await contract.method7123949();
+8. Calling await contract.password();
+9. Calling await contract.authenticate('ethernaut0');
